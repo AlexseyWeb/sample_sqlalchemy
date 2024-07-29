@@ -5,9 +5,13 @@ from select_db import select
 
 engine = create_engine("sqlite+pysqlite:///:memory:", future=True)
 
-# with engine.connect() as db:
-# 	result = db.execute(text("select 'hello DB'"))
-# 	print(result.all())
 
-create_db(engine)
+try:
+	first_numb = int(input("Enter x number please: "))
+	second_numb = int(input("Enter y number please: "))
+except:
+	print("Undefined error")
+
+
+create_db(engine, first_numb, second_numb)
 select(engine)
