@@ -15,5 +15,9 @@ except:
 
 
 create_db(engine, first_numb, second_numb)
-select(engine)
-create_session(engine)
+list_run = [select, create_session,]
+
+for run in list_run:
+	run(engine)
+
+
