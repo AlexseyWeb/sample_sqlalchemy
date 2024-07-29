@@ -2,6 +2,7 @@
 from sqlalchemy import create_engine, text
 from create_table import create_db
 from select_db import select
+from create_session import create_session
 
 engine = create_engine("sqlite+pysqlite:///:memory:", future=True)
 
@@ -15,3 +16,4 @@ except:
 
 create_db(engine, first_numb, second_numb)
 select(engine)
+create_session(engine)
