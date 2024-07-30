@@ -1,2 +1,2 @@
-# sample_sqlalchemy
-Samples sqlalchemy
+-small script for working sqlalchemy
+
