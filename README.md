@@ -1,2 +1,2 @@
--small script for working with sqlalchemy
+- script for working with sqlalchemy
 
