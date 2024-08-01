@@ -17,4 +17,17 @@ def create_user_table(engine):
 		)
 	metadata_obj.create_all(engine)
 
+def create_address_user(engine):
+	metadata_obj = MetaData()
+
+	address_table = Table(
+		"address account",
+		metadata_obj,
+		Column("id", Integer, primary_key=True),
+		Column("street", String(150)),
+		Column("number_street", Integer),
+		Column("fulladdress", String(200))
+		)
+	metadata_obj.create_all(engine)
+
 
