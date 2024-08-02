@@ -30,4 +30,16 @@ def create_address_user(engine):
 		)
 	metadata_obj.create_all(engine)
 
+def create_product(engine):
+	metadata_obj = MetaData()
+	product_table = Table(
+		"product",
+		metadata_obj,
+		Column("id", Integer, primary_key=True),
+		Column("name_product", String(180)),
+		Column("contry", String(100)),
+		Column("color", String(50)),
+		Column("year", Integer)
+		)
+
 
