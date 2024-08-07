@@ -42,4 +42,3 @@ def create_product(engine):
 		Column("year", Integer)
 		)
 
-
