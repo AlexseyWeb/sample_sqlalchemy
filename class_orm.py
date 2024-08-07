@@ -1,6 +1,7 @@
 from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy import Column, Integer, String 
 from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 
 sqlite_database = "sqlite:///restaurant"
@@ -20,4 +21,10 @@ class Person(Base):
 
 Base.metadata.create_all(bind=engine)
 
-print("Database restaraunt is created...")
+Session = sessionmaker(autoflush=False, bind=engine)
+
+with Session(autoflush=False, bind=engine) as db:
+	tom = Person(name="Tom", age=32)
+	db.add(tom)
+	db.commit()
+	print(tom.id)
