@@ -32,3 +32,8 @@ with Session(autoflush=False, bind=engine) as db:
 	db.add(alex)
 	db.commit()
 	print(tom.id)
+
+with Session(autoflush=False, bind=engine):
+	people = db.query(Person).all()
+	for i in people:
+		print(f"{i.id}.{i.name} {i.age}")
