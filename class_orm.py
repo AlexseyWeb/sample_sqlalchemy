@@ -25,6 +25,10 @@ Session = sessionmaker(autoflush=False, bind=engine)
 
 with Session(autoflush=False, bind=engine) as db:
 	tom = Person(name="Tom", age=32)
+	jack = Person(name="Jack", age=28)
+	alex = Person(name="Alex", age=23)
 	db.add(tom)
+	db.add(jack)
+	db.add(alex)
 	db.commit()
 	print(tom.id)
