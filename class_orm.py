@@ -45,3 +45,9 @@ with Session(autoflush=False, bind=engine) as db:
 with Session(autoflush=False, bind=engine):
 	people = db.query(Person).filter(Person.age > 30).first()
 	print(f" Фильтрация запроса id = {i.id} name = {i.name} age = {i.age}")
+
+with Session(autoflush=False, bind=engine) as db:
+	remove_people = db.query(Person).filter(Person.id == 1).first()
+	db.delete(remove_people)
+	db.commit()
+
